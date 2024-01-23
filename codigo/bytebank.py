@@ -29,7 +29,4 @@ class Funcionario:
 
 
 
-# pip install virtualenv
-# virtualenv venv
-# venv/Scripts/Activate
-# deactivate
+
