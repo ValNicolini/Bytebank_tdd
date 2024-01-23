@@ -30,6 +30,3 @@ class Funcionario:
 
 
 
-# pip install virtualenv
-# virtualenv nome_da_virtualenv
-# nome_da_virtualenv/ScriptsActivate
