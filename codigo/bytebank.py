@@ -20,6 +20,12 @@ class Funcionario:
         ano_atual = date.today().year
         return ano_atual - int(ano_nasc)
 
+    def sobrenome(self):
+        nome_completo = self._nome.strip()
+        nome_quebrado = nome_completo.split(' ')
+        return nome_quebrado[-1]
+
+
     def calcular_bonus(self):
         valor = self._salario * 0.1
         if valor > 1000:
