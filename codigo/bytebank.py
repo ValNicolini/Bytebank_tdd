@@ -24,17 +24,19 @@ class Funcionario:
         nome_completo = self._nome.strip()
         nome_quebrado = nome_completo.split(' ')
         return nome_quebrado[-1]
+    def _eh_socio(self):
+        sobrenomes = ['Limeira', 'Santos', 'Nicolini', 'Silva', 'Gimenes', 'Magalhaes']
+        return self._salario >= 100000 and (self.sobrenome() in sobrenomes)
 
     def decrescimo_salario(self):
-        sobrenomes = ['Limeira', 'Santos', 'Nicolini', 'Silva', 'Gimenes', 'Magalhaes']
-        if self._salario >= 100000 and (self.sobrenome() in sobrenomes):
+        if self._eh_socio():
             decrescimo = self._salario * 0.1
             self._salario = self._salario - decrescimo
 
     def calcular_bonus(self):
         valor = self._salario * 0.1
         if valor > 1000:
-            valor = 0
+            raise ('Salário muito alto para receber bônus!')
         return valor
 
     def __str__(self):
