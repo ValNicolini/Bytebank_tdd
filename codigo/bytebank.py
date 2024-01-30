@@ -15,18 +15,18 @@ class Funcionario:
         return self._salario
 
     def idade(self):
-        data_nasc_quebrado = self._data_nascimento.split('/')
-        ano_nasc = data_nasc_quebrado[-1]
+        data_nascimento_quebrada = self._data_nascimento.split('/')
+        ano_nascimento = data_nascimento_quebrada[-1]
         ano_atual = date.today().year
-        return ano_atual - int(ano_nasc)
+        return ano_atual - int(ano_nascimento)
 
     def sobrenome(self):
-        nome_completo = self._nome.strip()
+        nome_completo = self.nome.strip()
         nome_quebrado = nome_completo.split(' ')
         return nome_quebrado[-1]
     def _eh_socio(self):
         sobrenomes = ['Limeira', 'Santos', 'Nicolini', 'Silva', 'Gimenes', 'Magalhaes']
-        return self._salario >= 100000 and (self.sobrenome() in sobrenomes)
+        return (self._salario >= 100000) and (self.sobrenome() in sobrenomes)
 
     def decrescimo_salario(self):
         if self._eh_socio():
@@ -36,7 +36,7 @@ class Funcionario:
     def calcular_bonus(self):
         valor = self._salario * 0.1
         if valor > 1000:
-            raise ('Salário muito alto para receber bônus!')
+            raise Exception ('Salário muito alto para receber bônus!')
         return valor
 
     def __str__(self):

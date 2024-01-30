@@ -56,6 +56,7 @@ class TestClass:
 
 # pytest -k idade
 # pytest -v -k idade
+# pytest --cov=codigo testes/ --cov-report term-missing
 
 
 
