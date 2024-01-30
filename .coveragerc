@@ -4,3 +4,9 @@ source = ./codigo
 exclude_lines =
     def __str__(self):
         return
+
+[html]
+directory = coverage_relatorio.html
+
+
+
